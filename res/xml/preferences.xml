@@ -136,6 +136,10 @@
     </PreferenceScreen>
   </PreferenceCategory>
   <PreferenceCategory android:title="@string/pref_extra_settings">
+    <CheckBoxPreference android:key="pref_key_mms_graphical_smilies"
+                        android:title="@string/pref_title_mms_graphical_smilies"
+                        android:summary="@string/pref_summary_mms_graphical_smilies"
+                        android:defaultValue="true" />
     <CheckBoxPreference android:key="pref_key_mms_send_on_enter"
                         android:title="@string/pref_title_mms_send_on_enter"
                         android:summary="@string/pref_summary_mms_send_on_enter"

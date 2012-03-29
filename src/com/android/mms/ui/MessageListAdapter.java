@@ -133,6 +133,7 @@ public class MessageListAdapter extends CursorAdapter {
     private Context mContext;
     private boolean mBlackBackground;
     private boolean mFullTimestamp;
+    private boolean mGraphicalSmilies;
 
     private HashMap<String, HashSet<MessageListItem>> mAddressToMessageListItems
         = new HashMap<String, HashSet<MessageListItem>>();
@@ -163,6 +164,7 @@ public class MessageListAdapter extends CursorAdapter {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         mBlackBackground = prefs.getBoolean(MessagingPreferenceActivity.BLACK_BACKGROUND, false);
         mFullTimestamp = prefs.getBoolean(MessagingPreferenceActivity.FULL_TIMESTAMP, false);
+        mGraphicalSmilies = prefs.getBoolean(MessagingPreferenceActivity.GRAPHICAL_SMILIES, true);
 
         mAvatarCache = new AvatarCache();
     }
@@ -189,7 +191,7 @@ public class MessageListAdapter extends CursorAdapter {
                     }
                 }
 
-                mli.bind(mAvatarCache, msgItem, mBlackBackground);
+                mli.bind(mAvatarCache, msgItem, mBlackBackground, mGraphicalSmilies);
                 mli.setMsgListItemHandler(mMsgListItemHandler);
 
                 // Add current item to mapping
@@ -228,7 +230,7 @@ public class MessageListAdapter extends CursorAdapter {
         HashSet<MessageListItem> set = mAddressToMessageListItems.get(address);
         if (set != null) {
             for (MessageListItem mli : set) {
-                mli.bind(mAvatarCache, mli.getMessageItem(), mBlackBackground);
+                mli.bind(mAvatarCache, mli.getMessageItem(), mBlackBackground, mGraphicalSmilies);
             }
         }
     }

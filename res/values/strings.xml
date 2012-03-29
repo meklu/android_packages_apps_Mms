@@ -381,6 +381,10 @@
     <string name="pref_title_notification_ringtone">Select ringtone</string>
     <!-- Settings item for setting the number of message to save for each conversation -->
     <string name="pref_messages_to_save">Set number of messages to save</string>
+    <!-- Settings item for enabling graphical smilies -->
+    <string name="pref_summary_mms_graphical_smilies">Check this to enable using images as smilies.</string>
+    <!-- Settings item description for enabling graphical smilies -->
+    <string name="pref_title_mms_graphical_smilies">Enable graphical smilies</string>
 
     <!-- The vibrate notification modes -->
     <string-array name="prefEntries_vibrateWhen">

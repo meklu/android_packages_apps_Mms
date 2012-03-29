@@ -68,6 +68,7 @@ public class MessagingPreferenceActivity extends PreferenceActivity {
     public static final String MMS_SAVE_LOCATION        = "pref_save_location";
     public static final String AUTO_DELETE              = "pref_key_auto_delete";
     public static final String BLACK_BACKGROUND         = "pref_key_mms_black_background";
+    public static final String GRAPHICAL_SMILIES        = "pref_key_mms_graphical_smilies";
     public static final String BACK_TO_ALL_THREADS      = "pref_key_mms_back_to_all_threads";
     public static final String SEND_ON_ENTER            = "pref_key_mms_send_on_enter";
     public static final String USER_AGENT               = "pref_key_mms_user_agent";

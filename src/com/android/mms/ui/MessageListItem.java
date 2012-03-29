@@ -105,6 +105,7 @@ public class MessageListItem extends LinearLayout implements
     private Handler mHandler;
     private MessageItem mMessageItem;
     private boolean mBlackBackground;
+    private boolean mGraphicalSmilies;
 
     public MessageListItem(Context context) {
         super(context);
@@ -147,9 +148,10 @@ public class MessageListItem extends LinearLayout implements
 
     }
 
-    public void bind(MessageListAdapter.AvatarCache avatarCache, MessageItem msgItem, Boolean blackBackground) {
+    public void bind(MessageListAdapter.AvatarCache avatarCache, MessageItem msgItem, Boolean blackBackground, Boolean graphicalSmilies) {
         mMessageItem = msgItem;
         mBlackBackground = blackBackground;
+        mGraphicalSmilies = graphicalSmilies;
 
         setLongClickable(false);
 
@@ -386,7 +388,11 @@ public class MessageListItem extends LinearLayout implements
                     buf.append(" - ");
                 }
                 SmileyParser parser = SmileyParser.getInstance();
-                buf.append(parser.addSmileySpans(body));
+                if (mGraphicalSmilies) {
+                    buf.append(parser.addSmileySpans(body));
+                } else {
+                    buf.append(body);
+                }
             }
         }
         // If we're in the process of sending a message (i.e. pending), then we show a "Sending..."
